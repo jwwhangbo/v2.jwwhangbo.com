@@ -5,12 +5,13 @@ export async function fetchGraphQL<T = any>(
   variables?: { [key: string]: any },
   headers?: { [key: string]: string },
 ): Promise<T> {
-  const { isEnabled: preview } = draftMode();
+  const { isEnabled: preview } = await draftMode();
 
   try {
     let authHeader = "";
+    const { get } = await cookies();
     if (preview) {
-      const auth = cookies().get("wp_jwt")?.value;
+      const auth = get("wp_jwt")?.value;
       if (auth) {
         authHeader = `Bearer ${auth}`;
       }
