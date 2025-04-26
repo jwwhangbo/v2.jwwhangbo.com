@@ -10,6 +10,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
+  const { enable } = await draftMode();
   const secret = searchParams.get("secret");
   const id = searchParams.get("id");
 
@@ -39,7 +40,7 @@ export async function GET(request: Request) {
 
   const authToken = login.authToken;
 
-  draftMode().enable();
+  enable();
 
   const query = gql`
     query GetContentNode($id: ID!) {

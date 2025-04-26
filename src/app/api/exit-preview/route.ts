@@ -3,9 +3,10 @@ import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
+  const { disable } = await draftMode();
   const path = searchParams.get("path");
 
-  draftMode().disable();
+  disable();
 
   const response = NextResponse.redirect(
     `${process.env.NEXT_PUBLIC_BASE_URL}${path}`,
