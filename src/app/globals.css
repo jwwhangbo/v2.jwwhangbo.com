@@ -1,23 +1,36 @@
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
 }
 
 body {
-  color: #fff;
-  background: #000;
+  max-width: 1100px;
+  margin: auto;
+  color: #000;
 }
 
-a {
-  color: #fff;
-  text-decoration: underline;
+@media (width > 64rem) {
+  body {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 33% auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: oklch(21% 0.006 285.885); /* tailwind v4 slate-900 */
+    color: rgb(226 232 240);
+  }
+  p {
+    color: rgb(148 163 184);
+  }
+}
+
+h1 {
+  font-size: 3rem;
 }

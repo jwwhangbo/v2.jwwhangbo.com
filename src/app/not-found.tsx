@@ -8,7 +8,7 @@ import { ContentNode, Page } from "@/gql/graphql";
 import { PageQuery } from "@/components/Templates/Page/PageQuery";
 import { SeoQuery } from "@/queries/general/SeoQuery";
 
-const notFoundPageWordPressId = 501;
+const notFoundPageWordPressId = '404-not-found';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { contentNode } = await fetchGraphQL<{ contentNode: ContentNode }>(
@@ -29,6 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function NotFound() {
   const { page } = await fetchGraphQL<{ page: Page }>(print(PageQuery), {
     id: notFoundPageWordPressId,
+    idType: "URI",
   });
 
   return <div dangerouslySetInnerHTML={{ __html: page.content || " " }} />;
