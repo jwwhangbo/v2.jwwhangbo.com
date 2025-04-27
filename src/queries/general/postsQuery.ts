@@ -11,6 +11,7 @@ export const postsQuery = gql`
           excerpt
           contentWithoutFigures
           slug
+          date
           projectLink {
             projectLink
           }

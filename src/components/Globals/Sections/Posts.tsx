@@ -52,7 +52,7 @@ const Posts = ({ posts }: { posts: PostFormatToPostConnection }) => {
               >
                 <Link
                   href={`posts/${node.slug}`}
-                  className={`group relative lg:grid lg:grid-cols-8 sm:gap-8 md:gap-4`}
+                  className={`group relative grid grid-cols-8 sm:gap-8 md:gap-4`}
                 >
                   {/* Always render both column containers, regardless of image presence */}
                   <div className="col-span-2">
@@ -63,30 +63,33 @@ const Posts = ({ posts }: { posts: PostFormatToPostConnection }) => {
                         }`}
                         alt={node.title || ""}
                         width={150}
-                        height={150}
-                        className="mb-4 lg:m-0"
+                        height={100}
+                        className="mb-4 lg:m-0 aspect-video"
                       />
                     )}
                   </div>
                   <div className="col-span-6">
+                    <p className="flex justify-start items-center gap-1 text-sm/tight mb-1">
+                      {(new Date(node.date ?? 0)).getFullYear()}
+                    </p>
                     <p className="flex justify-start items-center gap-1 text-lg/tight text-slate-600! dark:text-slate-300! mb-4">
                       {node.title || ""}
                     </p>
-                    <div
+                    {/* <div
                       className="max-h-24 overflow-y-hidden"
                       dangerouslySetInnerHTML={{
                         __html: node.excerpt ?? "&nbsp;",
                       }}
-                    />
+                    /> */}
                     <div className="flex flex-wrap gap-2 mt-4">
-                      {node.tags?.nodes.map((tagNode: Tag) => (
+                      {/* {node.tags?.nodes.map((tagNode: Tag) => (
                         <div
                           key={tagNode.id}
                           className="text-xs py-1 px-2 bg-violet-800/50 rounded-full border-t-[1px] border-violet-900 select-none drop-shadow-lg"
                         >
                           <p>{tagNode.name}</p>
                         </div>
-                      ))}
+                      ))} */}
                     </div>
                   </div>
                 </Link>
