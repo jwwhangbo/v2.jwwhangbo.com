@@ -6,7 +6,8 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: process.env.NEXT_PUBLIC_WORDPRESS_API_HOSTNAME,
-        port: "",
+        port: "8080",
+        pathname: "/wp-content/uploads/**"
       },
     ],
   },
