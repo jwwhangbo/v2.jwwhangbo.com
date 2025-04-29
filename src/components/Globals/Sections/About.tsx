@@ -1,7 +1,6 @@
 "use client";
 import { Post } from "@/gql/graphql";
 import Image from "next/image";
-import profilePic from "@/public/linkedin_profile.jpeg";
 import WavingHand from "./WavingHand";
 import { InView } from "react-intersection-observer";
 import { useInView } from "../Providers/NavigationProvider";
@@ -27,7 +26,7 @@ export default function About({ post }: { post: Post }) {
       <SectionHeader text="About" />
       <div className="px-3 lg:px-0 relative">
         <Image
-          src={profilePic}
+          src="/linkedin_profile.jpeg"
           alt={"profile picture"}
           width={300}
           height={300}

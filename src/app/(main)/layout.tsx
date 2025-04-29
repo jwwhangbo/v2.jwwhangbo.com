@@ -1,11 +1,8 @@
 import { draftMode } from "next/headers";
-import { Inter } from "next/font/google";
 
 import Navigation from "@/components/Globals/Navigation/Navigation";
 import { ViewProvider } from "@/components/Globals/Providers/NavigationProvider";
 import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default async function RootLayout({
   children,

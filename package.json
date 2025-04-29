@@ -1,11 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "dev": "graphql-codegen --config codegen.ts && node ./add-ts-nocheck.js && next dev",
-    "build": "graphql-codegen --config codegen.ts && node ./add-ts-nocheck.js && next build",
+    "dev": "graphql-codegen --config codegen.ts && bun ./add-ts-nocheck.js && next dev",
+    "build": "graphql-codegen --config codegen.ts && bun ./add-ts-nocheck.js && next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen": "graphql-codegen --config codegen.ts && node ./add-ts-nocheck.js"
+    "codegen": "graphql-codegen --config codegen.ts && bun ./add-ts-nocheck.js"
   },
   "dependencies": {
     "graphql": "^16.9.0",
@@ -16,8 +16,8 @@
     "react-intersection-observer": "^9.16.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "5.0.0",
-    "@graphql-codegen/client-preset": "4.3.3",
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/client-preset": "^4.8.0",
     "@graphql-codegen/schema-ast": "^4.1.0",
     "@tailwindcss/postcss": "^4.1.4",
     "@types/node": "^20",
