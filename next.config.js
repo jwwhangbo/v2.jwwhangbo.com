@@ -4,9 +4,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
+        protocol: "https",
         hostname: process.env.NEXT_PUBLIC_WORDPRESS_API_HOSTNAME,
-        port: "8080",
         pathname: "/wp-content/uploads/**"
       },
     ],
