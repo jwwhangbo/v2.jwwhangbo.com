@@ -43,5 +43,5 @@ jobs:
           context: .
           push: true
           tags: |
-            jwwhangbo/v2:latest
-            jwwhangbo/v2:${{ github.sha }}
+            jwhangbo/v2:latest
+            jwhangbo/v2:${{ github.sha }}
