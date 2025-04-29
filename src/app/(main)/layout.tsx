@@ -15,7 +15,7 @@ export default async function RootLayout({
     <div className="lg:grid lg:grid-cols-[33%_auto] lg:gap-[40px]">
       <ViewProvider>
         <Navigation />
-        <section className="">
+        <section className="mr-10">
           {children}
           <footer className="py-24">
             <p className="max-w-[48%] text-sm">
