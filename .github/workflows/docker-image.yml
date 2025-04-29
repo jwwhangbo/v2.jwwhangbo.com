@@ -15,15 +15,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
-      - name: Create .env file
-        run: |
-          echo "NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}" > .env
-          echo "NEXT_PUBLIC_WORDPRESS_API_URL=${{ secrets.NEXT_PUBLIC_WORDPRESS_API_URL }}" >> .env
-          echo "NEXT_PUBLIC_WORDPRESS_API_HOSTNAME=${{ secrets.NEXT_PUBLIC_WORDPRESS_API_HOSTNAME }}" >> .env
-          echo "HEADLESS_SECRET=${{ secrets.HEADLESS_SECRET }}" >> .env
-          echo "WP_USER=${{ secrets.WP_USER }}" >> .env
-          echo "WP_APP_PASS=${{ secrets.WP_APP_PASS }}" >> .env
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -45,3 +36,10 @@ jobs:
           tags: |
             jwwhangbo/v2:latest
             jwwhangbo/v2:${{ github.sha }}
+          secrets: |
+            NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}
+            NEXT_PUBLIC_WORDPRESS_API_URL=${{ secrets.NEXT_PUBLIC_WORDPRESS_API_URL }}
+            NEXT_PUBLIC_WORDPRESS_API_HOSTNAME=${{ secrets.NEXT_PUBLIC_WORDPRESS_API_HOSTNAME }}
+            HEADLESS_SECRET=${{ secrets.HEADLESS_SECRET }}
+            WP_USER=${{ secrets.WP_USER }}
+            WP_APP_PASS=${{ secrets.WP_APP_PASS }}
