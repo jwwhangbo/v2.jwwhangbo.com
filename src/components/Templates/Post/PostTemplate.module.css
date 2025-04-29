@@ -8,6 +8,16 @@
   text-align: center;
 }
 
+.post h1.title {
+    font-size:xx-large;
+  }
+
+@media (width < 48rem) {
+  .post h1.title {
+    font-size:x-large;
+  }
+}
+
 .date {
   text-align: left;
   color: #666;

@@ -39,7 +39,7 @@ const Projects = ({ posts }: { posts: PostFormatToPostConnection }) => {
         {posts.edges.length > 0 &&
           posts.edges.map((edge: { node: Post }) => {
             const { node } = edge;
-            const itemClassName = `group relative lg:grid lg:grid-cols-8 sm:gap-8 md:gap-4 hover:scale-105 transition-transform ${
+            const itemClassName = `group relative lg:grid lg:grid-cols-8 sm:gap-8 md:gap-4 transition-transform ${
               style.card
             } ${ishovering && !(hoverItem === node.id) && "opacity-50"}`;
 

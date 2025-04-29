@@ -42,7 +42,9 @@ const Posts = ({ posts }: { posts: PostFormatToPostConnection }) => {
             return (
               <li
                 key={node.id}
-                className={`hover:scale-105 transition-transform ${style.card} ${ishovering && !(hoverItem === node.id) && "opacity-50"}`}
+                className={`${style.card} transition-transform ${
+                  ishovering && !(hoverItem === node.id) && "opacity-50"
+                }`}
                 onMouseOver={() => {
                   setHoverItem(node.id);
                 }}
@@ -52,7 +54,7 @@ const Posts = ({ posts }: { posts: PostFormatToPostConnection }) => {
               >
                 <Link
                   href={`posts/${node.slug}`}
-                  className={`group relative grid grid-cols-8 sm:gap-8 md:gap-4`}
+                  className={`group relative flex flex-col lg:grid grid-cols-8 sm:gap-8 md:gap-4`}
                 >
                   {/* Always render both column containers, regardless of image presence */}
                   <div className="col-span-2">
@@ -70,7 +72,7 @@ const Posts = ({ posts }: { posts: PostFormatToPostConnection }) => {
                   </div>
                   <div className="col-span-6">
                     <p className="flex justify-start items-center gap-1 text-sm/tight mb-1">
-                      {(new Date(node.date ?? 0)).getFullYear()}
+                      {new Date(node.date ?? 0).getFullYear()}
                     </p>
                     <p className="flex justify-start items-center gap-1 text-lg/tight text-slate-600! dark:text-slate-300! mb-4">
                       {node.title || ""}

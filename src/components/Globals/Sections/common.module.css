@@ -1,3 +1,7 @@
+.card {
+  position:relative;
+}
+
 .card::before {
   content: "";
   position: absolute;
@@ -5,7 +9,7 @@
   left: -15px; /* Extend 15px to the left */
   right: -15px; /* Extend 15px to the right */
   bottom: -10px; /* Extend 10px below */
-  background-color: transparent;
+  /* background-color: transparent; */
   z-index: -1;
   border-radius: 0.25rem;
   transition: background-color 0.2s ease-in-out;

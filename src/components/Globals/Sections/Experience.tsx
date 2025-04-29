@@ -36,7 +36,7 @@ const Experience = ({ posts }: { posts: PostFormatToPostConnection }) => {
             const { node } = edge;
             return (
               <li
-                className={`relative grid grid-cols-8 sm:gap-8 md:gap-4 hover:scale-105 transition-transform ${
+                className={`relative grid grid-cols-8 sm:gap-8 md:gap-4 transition-transform ${
                   style.card
                 } ${ishovering && !(hoverItem === node.id) && "opacity-50"}`}
                 key={node.id}
