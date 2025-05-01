@@ -17,8 +17,8 @@ export default async function RootLayout({
         <Navigation />
         <section className="lg:mr-10">
           {children}
-          <footer className="py-24">
-            <p className="max-w-[48%] text-sm">
+          <footer className="px-8 lg:px-0 py-24">
+            <p className="lg:max-w-[48%] text-sm">
               Designed using <Link href="https://figma.com">Figma</Link>,
               Brought to life using{" "}
               <Link href="https://nextjs.org/">NextJS</Link>. Content

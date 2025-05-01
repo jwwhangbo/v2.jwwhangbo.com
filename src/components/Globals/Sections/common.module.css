@@ -1,8 +1,8 @@
 .card {
-  position:relative;
+  position: relative;
 }
 
-.card::before {
+.card::after {
   content: "";
   position: absolute;
   top: -10px; /* Extend 10px above */
@@ -10,13 +10,13 @@
   right: -15px; /* Extend 15px to the right */
   bottom: -10px; /* Extend 10px below */
   /* background-color: transparent; */
-  z-index: -1;
+  /* z-index: -1; */
   border-radius: 0.25rem;
   transition: background-color 0.2s ease-in-out;
 }
 
-.card:hover::before {
+.card:hover::after {
   background-color: oklch(37.3% 0.034 259.733/0.2);
   border-top: 1px solid oklch(27.8% 0.033 256.848);
-  filter: drop-shadow(0 4px 4px rgb(0 0 0 / 0.15));
+  /* filter: drop-shadow(0 4px 4px rgb(0 0 0 / 0.15)); */
 }
