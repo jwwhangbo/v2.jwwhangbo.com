@@ -18,20 +18,22 @@ export default async function Page() {
     print(postsQuery),
     {
       categoryName: "Experience",
+      first: 10,
     }
   );
 
-  const { posts:posts_projects } = await fetchGraphQL<{ posts: PostFormatToPostConnection }>(
-    print(postsQuery),
-    {
-      categoryName: "Projects",
-    }
-  );
+  const { posts: posts_projects } = await fetchGraphQL<{
+    posts: PostFormatToPostConnection;
+  }>(print(postsQuery), {
+    categoryName: "Projects",
+    first: 10,
+  });
 
   const { posts: blog_posts } = await fetchGraphQL<{ posts: PostFormatToPostConnection }>(
     print(postsQuery),
     {
-      categoryName: "Posts"
+      categoryName: "Posts",
+      first: 4,
     }
   )
 
