@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const postsQuery = gql`
-  query postsQuery($categoryName: String) {
-    posts(where: { categoryName: $categoryName }) {
+  query postsQuery($categoryName: String, $first: Int) {
+    posts(where: { categoryName: $categoryName }, first: $first) {
       edges {
         node {
           id
