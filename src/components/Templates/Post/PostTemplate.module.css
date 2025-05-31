@@ -28,3 +28,13 @@
 .contentBody > * + * {
   margin-top: 1rem;
 }
+
+.contentBody p {
+  text-align: center;
+}
+
+.contentBody figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
