@@ -18,7 +18,6 @@ export default async function Page() {
     print(postsQuery),
     {
       categoryName: "Experience",
-      first: 10,
     }
   );
 
@@ -26,7 +25,6 @@ export default async function Page() {
     posts: PostFormatToPostConnection;
   }>(print(postsQuery), {
     categoryName: "Projects",
-    first: 10,
   });
 
   const { posts: blog_posts } = await fetchGraphQL<{ posts: PostFormatToPostConnection }>(
